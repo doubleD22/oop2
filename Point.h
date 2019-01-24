@@ -31,6 +31,11 @@ public:
 		m_yc += p.m_yc;
 		return *this;
 	}
+	Point& operator=(const Point& p) //move point
+	{
+		*this = p;
+		return *this;
+	}
 	friend ostream& operator<<(ostream& os, const Point& p)
 	{
 		os << '(' << p.get_x() << ',' << p.get_y() << ')';

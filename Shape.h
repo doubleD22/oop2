@@ -1,5 +1,6 @@
 #pragma once
 #include "Point.h"
+#include "Canvas.h"
 
 class Shape : public Point
 {

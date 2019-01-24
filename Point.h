@@ -5,9 +5,18 @@ using namespace std;
 
 enum class Color { white=0, red, green, blue, yellow, black, END_OF_COLORS };
 
-std::ostream& operator << (std::ostream& os, const Color& c)
+ostream& operator<<(ostream& os, Color c)
 {
-	os << c;
+	switch (c)
+	{
+	case Color::white:		os << "White "; break;
+	case Color::red:		os << "Red "; break;
+	case Color::green:		os << "Green "; break;
+	case Color::blue:		os << "Blue "; break;
+	case Color::yellow:		os << "Yellow "; break;
+	case Color::black:		os << "Black "; break;
+	default:				os << "No color ";
+	}
 	return os;
 }
 

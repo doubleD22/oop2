@@ -17,7 +17,6 @@ void Shape::draw()
 
 void Shape::move(const Point & P)
 {
-	m_org += P;
 }
 
 

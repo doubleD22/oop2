@@ -24,6 +24,7 @@ void Canvas::insert_shape(Shape * shape)
 	Shape** temp = new Shape*[m_length + 1];
 	for (int i = 0; i < m_length; i++)
 		temp[i] = m_shapes[i];
+	(*shape).move(m_org);
 	temp[m_length] = shape;
 	delete[] m_shapes;
 	m_shapes = temp;

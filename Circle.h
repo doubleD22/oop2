@@ -9,6 +9,7 @@ protected:
 public:
 	Circle(const Point& center, const unsigned& radius, const Color c);
 	Point get_radius() const;
-	void draw() const;
+	void draw();
 	void scale(const int& factor);
+	double area() const;
 };

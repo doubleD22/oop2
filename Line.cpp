@@ -1,18 +1,18 @@
 #include "Line.h"
-#include <math.h>  
 
-Line::Line(const Point & p1, const Point & p2, const Color c) : Shape(p1, c)
+
+Line::Line(const Point & p1, const Point & p2, const Color c) : Shape(p1.get_x()>p2.get_x()?p1:p2, c)
 {
-	m_end = p2;
+	m_end = p1.get_x()>p2.get_x() ? p2 : p1;
 }
 
 void Line::move(const Point & p)
 {
-	m_org += p;
+	Shape::move(p);
 	m_end += p;
 }
 
-void Line::draw() const
+void Line::draw()
 {
 	cout<<m_color<< " Line from " << m_org << " To " << m_end << endl;
 }
@@ -31,6 +31,11 @@ void Line::scale(const int & factor)
 	int newy = m_end.get_y() + length*(factor - 1)*sin(alpha) - m_org.get_y();
 	Point temp(newx, newy);
 	m_end = temp;
+}
+
+Point Line::get_end()
+{
+	return m_end;
 }
 
 							

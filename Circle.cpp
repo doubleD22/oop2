@@ -1,6 +1,6 @@
 #include "Circle.h"
 
-Circle::Circle(const Point & center, const unsigned& radius, const Color c) : Shape(center, c)
+Circle::Circle(const Point & center = Point(0, 0), const unsigned& radius=1, const Color c = Color::white) : Shape(center, c)
 {
 	m_radius = radius;
 }
@@ -20,7 +20,7 @@ void Circle::scale(const int & factor)
 	m_radius *= factor;
 }
 
-double Circle::area() const
+double Circle::area()
 {
 	return 3.14*pow(m_radius,2);
 }

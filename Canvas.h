@@ -3,15 +3,18 @@
 
 class Canvas : public Shape
 {
-protected:
-	Shape** m_shapes;
+private:
+	Shape ** m_shapes; //creating 
 	int m_length;
-public:
-	Canvas(const Point& p, Color c, Shape** shapes = 0, int length=0);
 	Canvas(const Canvas& c);
+public:
+	Canvas(const Point& p , Color c); //constructor
 	~Canvas();
-	void draw() const;
+	void draw();
 	void scale(const int& factor);
-	double area() const;
+	double area();
 	void insert_shape(Shape* shape);
+	//Canvas& operator=(const Canvas& c);
+	static int m_counter;
 };
+

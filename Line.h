@@ -12,9 +12,9 @@ public:
 	void move(const Point& p);          // add the coordinate of p for m_end and m_org
 	void draw();
 	double length() const;
-	string who_am_i() { return "line"; } //yep, im a line
+	//string who_am_i() { return "line"; } //yep, im a line
 	void scale(const int& factor);
-	double area() { return 0; }
-	Point get_end();
+	double area() { return 0; }  //beacuse line has no width therfore it dont have an area
+	Point get_end(); 
 };
 
